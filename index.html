@@ -1,5 +1,201 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="UTF-8"><title>热门OpenClaw - hotclaw.top</title></head>
-<body>热门OpenClaw - hotclaw.top</body>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>热门OpenClaw - hotclaw.top</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #FF6B35;
+            --accent-color: #2A5CAA;
+            --bg-color: #F5F7FA;
+        }
+        body { background-color: var(--bg-color); font-family: system-ui, -apple-system, sans-serif; }
+        .navbar { background-color: var(--primary-color); }
+        .navbar-brand, .nav-link { color: white !important; }
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), #e55a2b);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+        .section-title {
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+            margin: 2rem 0;
+        }
+        .rank-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .badge-custom { background-color: var(--accent-color); color: white; }
+        .rank-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .coming-soon {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        footer { background: #333; color: white; padding: 2rem 0; margin-top: 3rem; }
+        .footer-links a { color: #88d; margin: 0 0.5rem; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">🔥 热门Claw</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#rankings">排行榜</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">关于</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1 class="display-4 fw-bold">🔥 热门OpenClaw</h1>
+            <p class="lead">OpenClaw生态热度排行榜</p>
+            <p class="mt-3">🎯 域名出售中：shuo65@qq.com</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Stats Overview -->
+        <section id="rankings">
+            <h2 class="section-title">📊 数据统计</h2>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-number">--</div>
+                    <div>累计用户量</div>
+                    <small class="text-muted">数据来源：GitHub + 问卷</small>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">--</div>
+                    <div>日活跃用户</div>
+                    <small class="text-muted">数据来源：自统计</small>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">--</div>
+                    <div>累计下载</div>
+                    <small class="text-muted">数据来源：GitHub Releases</small>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">--</div>
+                    <div>用户评分</div>
+                    <small class="text-muted">数据来源：用户反馈</small>
+                </div>
+            </div>
+
+            <div class="coming-soon">
+                <strong>🚧 功能开发中：</strong> 自动数据采集系统（即将上线）
+            </div>
+        </section>
+
+        <!-- Rankings -->
+        <section>
+            <h2 class="section-title">🏆 排行榜</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="rank-card">
+                        <h5>⭐ 累计用户量排行</h5>
+                        <p class="text-muted">按历史总用户数排序</p>
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">版本A - 12,345 用户</li>
+                            <li class="list-group-item">版本B - 8,901 用户</li>
+                            <li class="list-group-item">版本C - 5,678 用户</li>
+                        </ol>
+                        <small class="text-muted">📅 数据更新时间：待定</small>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="rank-card">
+                        <h5>📈 用户评价排行</h5>
+                        <p class="text-muted">按评分和评论数综合排序</p>
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">版本C - ⭐4.9 (234评论)</li>
+                            <li class="list-group-item">版本A - ⭐4.8 (567评论)</li>
+                            <li class="list-group-item">版本B - ⭐4.7 (189评论)</li>
+                        </ol>
+                        <small class="text-muted">📅 数据更新时间：待定</small>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="rank-card">
+                        <h5>💾 累计下载排行</h5>
+                        <p class="text-muted">按历史总下载次数排序</p>
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">版本A - 45,678 次</li>
+                            <li class="list-group-item">版本B - 32,145 次</li>
+                            <li class="list-group-item">版本C - 21,098 次</li>
+                        </ol>
+                        <small class="text-muted">📅 数据更新时间：待定</small>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="rank-card">
+                        <h5>🔥 日下载排行</h5>
+                        <p class="text-muted">按最近7天平均下载量排序</p>
+                        <ol class="list-group list-group-numbered">
+                            <li class="list-group-item">版本B - 892 次/日</li>
+                            <li class="list-group-item">版本A - 765 次/日</li>
+                            <li class="list-group-item">版本C - 456 次/日</li>
+                        </ol>
+                        <small class="text-muted">📅 数据更新时间：待定</small>
+                    </div>
+                </div>
+            </div>
+            <div class="alert alert-info">
+                <strong>📌 说明：</strong> 以上为示例数据，实际排行榜正在开发自动采集系统，完成后将实时更新。
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <h6>友情链接</h6>
+            <p class="footer-links">
+                <a href="https://www.dragonclaws.cn">龙爪中国</a> |
+                <a href="https://www.hotclaw.top">热门Claw</a> |
+                <a href="https://www.freemodel.shop">免费模型商店</a> |
+                <a href="https://www.clawhealth.icu">Claw健康监护室</a> |
+                <a href="https://www.fastclaw.love">快爪爱</a>
+            </p>
+            <p class="mb-0">© 2026 热门Claw. 所有域名出售中，有意联系：<a href="mailto:shuo65@qq.com" class="text-white">shuo65@qq.com</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
