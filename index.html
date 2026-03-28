@@ -3,21 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="热门OpenClaw - OpenClaw生态热度排行榜，GitHub Stars超25万，AI Agent领域的现象级开源项目。">
-    <meta name="keywords" content="OpenClaw,排行榜,下载量,用户量,GitHub Stars,AI Agent,热度排名">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.hotclaw.top/">
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#FF6B35">
+    <!-- SEO Meta -->
+    <meta name="description" content="热门OpenClaw - OpenClaw生态热度排行榜。GitHub Stars超25万，提供GitHub Star、下载量、用户评价、日活等多维度排行。">
+    <meta name="keywords" content="OpenClaw,排行榜,下载量,用户量,GitHub Stars,AI Agent,热度排名,开源项目排行">
     <meta name="author" content="热门Claw">
-    <!-- Open Graph -->
-    <meta property="og:title" content="热门OpenClaw - OpenClaw生态热度排行">
-    <meta property="og:description" content="OpenClaw GitHub Stars突破25万，史上增速最快的开源项目。查看各版本热度、下载量、用户评价排行。">
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.hotclaw.top">
+    <meta property="og:url" content="https://www.hotclaw.top/">
+    <meta property="og:title" content="热门OpenClaw - OpenClaw生态热度排行">
+    <meta property="og:description" content="GitHub Stars突破25万，史上增速最快的开源项目。多维度排行，数据实时更新。">
     <meta property="og:image" content="https://www.hotclaw.top/images/og-image.png">
-    <!-- Twitter Card -->
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="热门OpenClaw">
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.hotclaw.top/">
     <meta name="twitter:title" content="热门OpenClaw - 热度排行榜">
-    <meta name="twitter:description" content="OpenClaw GitHub Stars突破25万，史上增速最快的开源项目。查看各版本热度、下载量、用户评价排行。">
+    <meta name="twitter:description" content="GitHub Stars突破25万，史上增速最快的开源项目。查看各版本热度排行。">
     <meta name="twitter:image" content="https://www.hotclaw.top/images/twitter-card.png">
     <title>热门OpenClaw - hotclaw.top</title>
+    <!-- Manifest (PWA) -->
+    <link rel="manifest" href="manifest.json">
+    <!-- Smooth Scroll -->
+    <style>html { scroll-behavior: smooth; }</style>
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" as="script">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "DataCatalog",
+      "name": "OpenClaw热度排行榜",
+      "description": "OpenClaw生态多维度数据排行，包括GitHub Stars、下载量、用户评价、日活跃度等。",
+      "url": "https://www.hotclaw.top",
+      "publisher": {
+        "@type": "Organization",
+        "name": "热门Claw",
+        "url": "https://www.hotclaw.top"
+      },
+      "dataset": [
+        {
+          "@type": "Dataset",
+          "name": "GitHub Stars 热度排行",
+          "description": "基于GitHub Star数量的版本热度排名"
+        },
+        {
+          "@type": "Dataset",
+          "name": "下载量排行",
+          "description": "各平台Release下载统计数据"
+        },
+        {
+          "@type": "Dataset",
+          "name": "用户评价排行",
+          "description": "基于社区反馈和评分的版本排名"
+        }
+      ]
+    }
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
@@ -79,6 +131,61 @@
         }
         footer { background: #333; color: white; padding: 2rem 0; margin-top: 3rem; }
         .footer-links a { color: #88d; margin: 0 0.5rem; }
+
+        /* Dark Mode */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #1a1a1a;
+                --text-color: #e0e0e0;
+            }
+            body { background-color: var(--bg-color); color: var(--text-color); }
+            .rank-card, .stat-card { background: #2d2d2d; color: var(--text-color); }
+            .coming-soon { background: #3d3d00; border-color: #8a7c00; }
+        }
+
+        /* Dark Mode Toggle Button */
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        .dark-mode-toggle:hover { transform: scale(1.1); }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 140px;
+            right: 20px;
+            z-index: 999;
+            background: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+
+        /* Sticky Navbar */
+        .navbar { transition: transform 0.3s; }
+        .navbar.navbar-hidden { transform: translateY(-100%); }
     </style>
 </head>
 <body>
@@ -243,6 +350,77 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="返回顶部">↑</button>
+
+    <!-- Dark Mode Toggle Button -->
+    <button id="darkModeToggle" class="dark-mode-toggle" aria-label="切换暗色模式">
+        <span id="darkModeIcon">🌙</span>
+    </button>
+
+    <!-- Bootstrap JS (deferred) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTop');
+        const navbar = document.querySelector('.navbar');
+        let lastScrollTop = 0;
+
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                navbar.classList.add('navbar-hidden');
+            } else {
+                navbar.classList.remove('navbar-hidden');
+            }
+            lastScrollTop = scrollTop;
+        });
+
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const darkModeIcon = document.getElementById('darkModeIcon');
+        const html = document.documentElement;
+
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            html.setAttribute('data-bs-theme', 'dark');
+            darkModeIcon.textContent = '☀️';
+        }
+
+        darkModeToggle.addEventListener('click', function() {
+            const isDark = html.getAttribute('data-bs-theme') === 'dark';
+            if (isDark) {
+                html.setAttribute('data-bs-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                darkModeIcon.textContent = '🌙';
+            } else {
+                html.setAttribute('data-bs-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                darkModeIcon.textContent = '☀️';
+            }
+        });
+
+        // Update copyright year
+        document.addEventListener('DOMContentLoaded', function() {
+            const year = new Date().getFullYear();
+            const copyright = document.querySelector('footer p.mb-0');
+            if (copyright) {
+                copyright.innerHTML = `© ${year} 热门Claw. 所有域名出售中，有意联系：<a href="mailto:shuo65@qq.com" class="text-white">shuo65@qq.com</a>`;
+            }
+        });
+    </script>
 </body>
 </html>
