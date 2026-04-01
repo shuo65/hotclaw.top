@@ -130,14 +130,6 @@
             font-size: 0.9rem;
             opacity: 0.95;
         }
-            .hero .btn {
-            padding: 0.4rem 1rem;
-            font-size: 0.9rem;
-        }
-        .hero .btn {
-            font-size: 1rem;
-            padding: 0.6rem 1.5rem;
-        }
         .section-title {
             border-left: 4px solid var(--accent-color);
             padding-left: 1rem;
@@ -460,6 +452,9 @@
                         <a class="nav-link" href="#versions">版本展示</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="ranking-detail.html">排行榜详情</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#contact">联系我们</a>
                     </li>
                 </ul>
@@ -477,31 +472,145 @@
                 <strong>🎯 域名出售中：</strong>
                 <a href="mailto:shuo65@qq.com" class="text-white text-decoration-underline fw-bold">shuo65@qq.com</a>
             </p>
-            <a href="#resources" class="btn btn-light btn-lg px-4">查看精选</a>
-        </div>
-    </section>
-
-    <!-- History Section -->
-    <section id="history">
-        <h2 class="section-title">📜 热门Claw发展史</h2>
-        <p class="text-muted mb-3">记录热门Claw的成长历程和重要里程碑</p>
-        <div id="auto-timeline"></div>
-        <div class="coming-soon">
-            <strong>🚧 正在开发：</strong> Git提交记录自动生成功能（即将上线）
-        </div>
-    </section>
-
-    <!-- Versions Section -->
-    <section id="versions" class="mt-5">
-        <h2 class="section-title">📦 OpenClaw版本展示</h2>
-        <p class="text-muted mb-3">了解OpenClaw各个版本的特点和更新内容</p>
-        <div class="alert alert-info">
-            <strong>📖 详细版本信息：</strong> 请访问 <a href="https://www.dragonclaws.cn/version-detail.html" target="_blank" class="alert-link">龙爪中国版本详情页</a> 查看完整版本历史和发展历程。
         </div>
     </section>
 
     <!-- Main Content -->
     <main class="container">
+        <!-- 热门OpenClaw版本展示 -->
+        <section id="versions">
+            <h2 class="section-title">📦 热门OpenClaw版本</h2>
+            <p class="text-muted mb-3">官方原版、汉化版、国内商业版本一站式对比</p>
+            <div class="row g-2 gy-2">
+                <!-- 官方原版 -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-primary mb-1 small">官方</span>
+                        <h6 class="mb-1">OpenClaw</h6>
+                        <p class="text-muted mb-1 very-small">开源原版，国际社区维护</p>
+                        <a href="https://github.com/OpenClaw/OpenClaw" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- 中文版 zh -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge badge-custom mb-1 small">zh</span>
+                        <h6 class="mb-1">中文汉化版</h6>
+                        <p class="text-muted mb-1 very-small">完全本地化，国内团队维护</p>
+                        <a href="https://www.dragonclaws.cn" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- 社区版 cn -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-info mb-1 small">cn</span>
+                        <h6 class="mb-1">社区版</h6>
+                        <p class="text-muted mb-1 very-small">开源免费，社区驱动</p>
+                        <a href="https://github.com/OpenClaw-zh" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- 腾讯 -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-primary mb-1 small">腾讯</span>
+                        <h6 class="mb-1">WorkBuddy</h6>
+                        <p class="text-muted mb-1 very-small">企业办公+微信原生</p>
+                        <a href="https://workbuddy.qq.com" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- 字节 -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-info mb-1 small">字节</span>
+                        <h6 class="mb-1">ArkClaw</h6>
+                        <p class="text-muted mb-1 very-small">飞书原生SaaS，云端托管</p>
+                        <a href="https://www.feishu.cn/arkclaw" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- 阿里 -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-success mb-1 small">阿里</span>
+                        <h6 class="mb-1">HiClaw</h6>
+                        <p class="text-muted mb-1 very-small">钉钉深度集成</p>
+                        <a href="https://www.aliyun.com/hi-claw" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- 百度 -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-danger mb-1 small">百度</span>
+                        <h6 class="mb-1">DuClaw</h6>
+                        <p class="text-muted mb-1 very-small">零部署网页版</p>
+                        <a href="https://duclaw.baidu.com" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- 华为 -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-secondary mb-1 small">华为</span>
+                        <h6 class="mb-1">HWClaw</h6>
+                        <p class="text-muted mb-1 very-small">鸿蒙生态系统级</p>
+                        <a href="https://consumer.huawei.com/hwclaw" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- 智谱 -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-primary mb-1 small">智谱</span>
+                        <h6 class="mb-1">AutoClaw</h6>
+                        <p class="text-muted mb-1 very-small">一键安装本地版</p>
+                        <a href="https://autoclaw.zhipu.ai" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- 月之暗面 -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-info mb-1 small">Moonshot</span>
+                        <h6 class="mb-1">Kimi Claw</h6>
+                        <p class="text-muted mb-1 very-small">超长上下文原生</p>
+                        <a href="https://kimi.moonshot.cn/claw" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- MiniMax -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-warning text-dark mb-1 small">MiniMax</span>
+                        <h6 class="mb-1">MaxClaw</h6>
+                        <p class="text-muted mb-1 very-small">极速部署，企业级安全</p>
+                        <a href="https://maxclaw.minimax.chat" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- 中兴 -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-secondary mb-1 small">中兴</span>
+                        <h6 class="mb-1">Co-Claw</h6>
+                        <p class="text-muted mb-1 very-small">政企专属</p>
+                        <a href="https://co-claw.zte.com.cn" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- 中关村科金 -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-light text-dark mb-1 small">中关村科金</span>
+                        <h6 class="mb-1">PowerClaw</h6>
+                        <p class="text-muted mb-1 very-small">营销服一体化</p>
+                        <a href="https://powerclaw.zkcjtech.com" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+                <!-- 猎豹移动 -->
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="version-card p-2">
+                        <span class="badge bg-light text-dark mb-1 small">猎豹</span>
+                        <h6 class="mb-1">EasyClaw</h6>
+                        <p class="text-muted mb-1 very-small">极致轻量化</p>
+                        <a href="https://easyclaw.cmcm.com" target="_blank" class="btn btn-sm btn-outline-primary btn-xs py-1 px-2">了解</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- 每周精选资源 -->
         <section id="resources">
             <h2 class="section-title">🔥 本周精选资源</h2>
@@ -685,7 +794,7 @@ taskkill /PID &lt;PID&gt; /F</code></pre>
     </main>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-dark text-white py-4 mt-5">
+    <footer class="bg-dark text-white py-4 mt-5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6 mb-3 mb-md-0">
@@ -820,7 +929,7 @@ taskkill /PID &lt;PID&gt; /F</code></pre>
                 copyright.innerHTML = `© ${year} 热门Claw. All rights reserved.`;
             }
 
-            // 发展史功能已按建议移除
+            loadTimeline();
         });
 
         // Git Timeline Loader
